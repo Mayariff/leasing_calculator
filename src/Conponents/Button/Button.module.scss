@@ -1,0 +1,37 @@
+@import 'src/assets/mixins';
+@import 'src/assets/variables';
+
+.container {
+  @include flexStyle(column, center, center);
+
+  .button {
+    height: 48px;
+    background: $accentColor;
+    border-radius: 40px;
+    border: none;
+    padding: 12px 24px;
+    @include text(#FFF, $fieldFont, 16px, 700);
+
+    &:hover {
+      background: #111;
+    }
+
+    &:active {
+      background: $textColor;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+    }
+  }
+
+  .loading {
+    color: transparent;
+  }
+
+  .spinner {
+    position: absolute;
+    @include sizeBlock(30px, 30px)
+  }
+
+}

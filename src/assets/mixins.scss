@@ -1,0 +1,52 @@
+@import "variables";
+
+@mixin noneBaseStyle() {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+@mixin flexStyle($dir, $jContent, $Items) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jContent;
+  align-items: $Items;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+@mixin text($color,$fontFamily,$fontSize, $fontWeight) {
+  color: $color;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  font-style: normal;
+}
+
+@mixin position($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin sizeBlock($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin rangeTrack($color, $size, $marginTop){
+  border-radius: 50%;
+  @include  sizeBlock($size, $size);
+  background-color: $color;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top:  $marginTop ;
+  //box-shadow: -$size 0 0 1000px #43e5f7;
+}
+
+@mixin sliderThumb($color){
+  height:  1px;
+  background-color: $color;
+}

@@ -1,0 +1,150 @@
+@import 'src/assets/mixins';
+@import 'src/assets/variables';
+
+.container {
+  @include flexStyle(column, center, flex-start);
+  @include sizeBlock(500px, 100px);
+  flex-wrap: nowrap;
+  position: relative;
+
+  .label {
+    @include text($textColor, $fieldFont, 16px, 400);
+    margin-bottom: 20px;
+  }
+
+  .inputContainer {
+    @include sizeBlock(427px, 68px);
+    border-radius: 16px;
+    background-color: $greySecond;
+    @include flexStyle(column, space-between, center);
+    position: relative;
+
+    &:after {
+      content: attr(datatype);
+      @include text($textColor, Nekst, 30px, 900);
+      height: 36px;
+      text-align: right;
+      @include position(absolute, 15px, inherit);
+      right: 24px;
+    }
+
+    .textInput {
+      @include text($textColor, Nekst, 30px, 900);
+      @include sizeBlock(88.7%, 100%);
+      text-align: left;
+      padding-right: 46px;
+      border: none;
+      background-color: transparent;
+    }
+
+    .trackContainer {
+      width: 88.7%;
+      @include position(absolute, 100%, inherit);
+      height: 2px;
+      margin-top: -2px;
+
+      .range {
+        @include position(absolute, 100%, 0);
+        -webkit-appearance: none;
+        background-color: $grey;
+      }
+
+      ::-webkit-slider-runnable-track {
+        height: 2px;
+        -webkit-appearance: none;
+        color: $accentColor;
+      }
+
+      ::-webkit-slider-thumb {
+        width: 10px;
+        -webkit-appearance: none;
+        height: 2px;
+        cursor: ew-resize;
+        background: transparent;
+        box-shadow: -200px 0 0 200px $accentColor;
+      }
+
+      ::-moz-range-progress {
+        background-color: $accentColor;
+      }
+
+      ::-moz-range-track {
+        background-color: $grey;
+      }
+
+      ::-ms-fill-lower {
+        background-color: $accentColor;
+      }
+
+      ::-ms-fill-upper {
+        background-color: $grey;
+      }
+    }
+
+    .thumbContainer {
+      width: 88.7%;
+      position: absolute;
+      bottom: -18px;
+
+      .thumb {
+        height: 24px;
+        background-color: transparent;
+      }
+
+      ::-webkit-slider-thumb {
+        @include sizeBlock(20px, 20px);
+        //transition-property: sizeBlock;
+        border-radius: 50%;
+        -webkit-appearance: none;
+        cursor: ew-resize;
+        background: $accentColor;
+      }
+    }
+
+    &:hover {
+      .trackContainer {
+        height: 1px;
+        margin-top: -2px;
+
+        ::-webkit-slider-runnable-track {
+          height: 1px;
+          mix-blend-mode: color-burn;
+        }
+
+        ::-webkit-slider-runnable-track {
+          height: 1px;
+          mix-blend-mode: color-burn;
+        }
+
+        ::-webkit-slider-thumb {
+          height: 1px;
+          mix-blend-mode: color-burn;
+        }
+
+      }
+
+      .thumbContainer {
+        ::-webkit-slider-thumb {
+          @include sizeBlock(24px, 24px);
+          transition: 0.2s;
+        }
+      }
+    }
+
+    &:active {
+      background-color: #FFFFFF;
+      border: 2px solid $greySecond;
+      border-radius: 16px;
+
+      .trackContainer {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+
