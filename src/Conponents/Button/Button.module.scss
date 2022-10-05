@@ -2,15 +2,18 @@
 @import 'src/assets/variables';
 
 .container {
-  @include flexStyle(column, center, center);
+  @include flexStyle(column, center, center, nowrap);
+  width: 100%;
 
   .button {
-    height: 48px;
+    width: 100%;
     background: $accentColor;
     border-radius: 40px;
     border: none;
-    padding: 12px 24px;
-    @include text(#FFF, $fieldFont, 16px, 700);
+    padding: 14px 24px;
+    @include text(#FFF, $mainFont, 30px, 900);
+    font-style: normal;
+    line-height: 36px;
 
     &:hover {
       background: #111;
@@ -23,6 +26,15 @@
     &:disabled {
       opacity: 0.4;
     }
+
+    @media (max-width: 370px) {
+      width: 100%;
+      font-size: 22px;
+      line-height: 20px;
+    }
+    @media (max-width: 240px) {
+      font-size: 18px;
+    }
   }
 
   .loading {
@@ -33,5 +45,6 @@
     position: absolute;
     @include sizeBlock(30px, 30px)
   }
+
 
 }

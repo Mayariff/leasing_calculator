@@ -2,10 +2,10 @@
 @import 'src/assets/variables';
 
 .container {
-  @include flexStyle(column, center, flex-start);
-  @include sizeBlock(500px, 100px);
-  flex-wrap: nowrap;
+  @include flexStyle(column, center, flex-start, nowrap);
   position: relative;
+  width: 100%;
+  margin-top: 32px;
 
   .label {
     @include text($textColor, $fieldFont, 16px, 400);
@@ -13,28 +13,58 @@
   }
 
   .inputContainer {
-    @include sizeBlock(427px, 68px);
+    @include sizeBlock(100%, 68px);
     border-radius: 16px;
-    background-color: $greySecond;
-    @include flexStyle(column, space-between, center);
+    border: 1px solid $greySecond;
+    background-color: $greySecondTransparent;
+    @include flexStyle(column, space-between, center, wrap);
     position: relative;
 
-    &:after {
-      content: attr(datatype);
-      @include text($textColor, Nekst, 30px, 900);
+    .indicator {
+      @include text($textColor, $mainFont, 30px, 900);
       height: 36px;
       text-align: right;
       @include position(absolute, 15px, inherit);
       right: 24px;
+      @media (max-width: 320px) {
+        @include text(#333E48, $mainFont, 22px, 900);
+        top: 20px;
+      }
+    }
+
+    .currency {
+      top: 10px;
+      @media (max-width: 320px) {
+        top: 18px;
+      }
+    }
+
+    .percent {
+      @include sizeBlock(69px, 54px);
+      top: 7px;
+      right: 7px;
+      padding: 15px 17px;
+      background: $indicatorBlockColor;
+      border-radius: 16px;
+      @include text($textColor, $mainFont, 20px, 900);
+      line-height: 120%;
+      @media (max-width: 320px) {
+        @include text(#333E48, $mainFont, 22px, 900);
+        top: 4px;
+        right: 4px;
+      }
     }
 
     .textInput {
-      @include text($textColor, Nekst, 30px, 900);
+      @include text($textColor, $mainFont, 30px, 900);
       @include sizeBlock(88.7%, 100%);
       text-align: left;
       padding-right: 46px;
       border: none;
       background-color: transparent;
+      @media (max-width: 320px) {
+        @include text(#333E48, $mainFont, 22px, 900);
+      }
     }
 
     .trackContainer {
@@ -61,7 +91,7 @@
         height: 2px;
         cursor: ew-resize;
         background: transparent;
-        box-shadow: -200px 0 0 200px $accentColor;
+        box-shadow: -900px 0 0 900px $accentColor;
       }
 
       ::-moz-range-progress {
@@ -93,7 +123,6 @@
 
       ::-webkit-slider-thumb {
         @include sizeBlock(20px, 20px);
-        //transition-property: sizeBlock;
         border-radius: 50%;
         -webkit-appearance: none;
         cursor: ew-resize;
@@ -132,12 +161,17 @@
     }
 
     &:active {
-      background-color: #FFFFFF;
+      background-color: #fff;
       border: 2px solid $greySecond;
       border-radius: 16px;
 
       .trackContainer {
         margin-top: 0;
+      }
+
+      .percent {
+        background: rgba(235, 235, 236, 0.35);
+        box-shadow: 2px 2px 2px 1px #E5E5E5;
       }
     }
   }

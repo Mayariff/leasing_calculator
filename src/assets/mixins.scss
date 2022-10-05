@@ -8,12 +8,12 @@
   outline: none;
 }
 
-@mixin flexStyle($dir, $jContent, $Items) {
+@mixin flexStyle($dir, $jContent, $Items, $wrap) {
   display: flex;
   flex-direction: $dir;
   justify-content: $jContent;
   align-items: $Items;
-  flex-wrap: wrap;
+  flex-wrap: $wrap;
   align-content: center;
 }
 

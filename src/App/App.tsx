@@ -1,11 +1,18 @@
-import React from 'react';
-import AccentBlock from "../Conponents/AccentBlock/AccentBlock";
+import React, {useEffect, useState} from 'react';
+import s from './App.module.scss'
+import Title from "../Conponents/Title/Title";
+import Calculator from "../features/Сalculator/Calculator";
 
 
 function App() {
+
+
     return (
-        <div style={{margin: '20px'}}>
-            <AccentBlock title={'Сумма договора лизинга'} totalSum={455} currency={'₽'}/>
+        <div className={s.container}>
+            <div className={s.contentContainer}>
+                <Title text={'Рассчитайте стоимость автомобиля в лизинг'}/>
+            <Calculator  />
+            </div>
         </div>
     );
 }

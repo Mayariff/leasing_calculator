@@ -1,0 +1,17 @@
+@import 'src/assets/mixins';
+@import 'src/assets/variables';
+
+.container {
+  @include sizeBlock(100%, 100%);
+  min-width: 100vw;
+  min-height: 100vh;
+  @include flexStyle(column, flex-start, center, wrap);
+  background: repeating-linear-gradient(to right, #fff, #fff 30px, $bcgColor 30px, $bcgColor 103px);
+
+  .contentContainer {
+    width: 94%;
+    max-width: 1346px;
+    @include flexStyle(column, flex-start, flex-start, nowrap);
+    flex-wrap: nowrap;
+  }
+}

@@ -1,0 +1,46 @@
+@import 'src/assets/mixins';
+@import 'src/assets/variables';
+
+.form {
+  width: 100%;
+  @include flexStyle(row, space-between, flex-start, nowrap);
+  @media (max-width: 1024px) {
+    @include flexStyle(column, space-between, flex-start, nowrap);
+    padding-top: 44px;
+  }
+
+  .fieldset {
+    padding: 0;
+    height: 264px;
+    @include flexStyle(column, space-between, flex-start, wrap);
+
+    &:nth-child(2) {
+      padding: 0 30px;
+    }
+
+    @media (max-width: 1024px) {
+      @include sizeBlock(100%, 100%);
+    }
+  }
+
+  .fieldsetRow {
+    padding: 34px 0 0;
+    width: 80%;
+    @include flexStyle(row, space-between, center, nowrap);
+    @media (max-width: 760px) {
+      width: 100%;
+    }
+    @media (max-width: 500px) {
+      @include flexStyle(column, space-between, flex-start, nowrap);
+    }
+  }
+
+  .fieldsetBtn {
+    padding: 44px 0 0;
+    width: 345px;
+    @media (max-width: 370px) {
+      width: 100%;
+    }
+  }
+
+}

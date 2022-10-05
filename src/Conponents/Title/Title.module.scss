@@ -1,0 +1,28 @@
+@import 'src/assets/mixins';
+@import 'src/assets/variables';
+
+.title {
+  @include text($titleColor, $mainFont, 54px, 900);
+  line-height: 90%;
+  text-align: left;
+  width: 100%;
+  max-width: 753px;
+  margin-top: 213px;
+  @media (max-width: 1024px) {
+    margin-top: 100px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 64px;
+  }
+  @media (max-width: 690px) {
+    font-size: 50px;
+  }
+  @media (max-width: 607px) {
+    margin-top: 44px;
+    font-size: 40px;
+  }
+  @media (max-width: 300px) {
+    font-size: 30px;
+  }
+
+}
