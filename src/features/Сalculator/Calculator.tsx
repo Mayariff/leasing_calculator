@@ -9,7 +9,6 @@ import {AccentBlock, Button, SmartInput} from '../../Conponents';
 
 
 const Calculator = () => {
-
     const conditions = useContext(DataContex)
     const dispatch = useAppDispatch()
 
@@ -43,7 +42,7 @@ const Calculator = () => {
 
 
     //кнопка
-    const onclickHandler: MouseEventHandler<HTMLInputElement> = (e) => {
+    const onclickHandler: MouseEventHandler<HTMLInputElement> = async (e) => {
         e.preventDefault()
         const params: paramsType = {
             car_coast: carCoast,
@@ -53,7 +52,8 @@ const Calculator = () => {
             total_sum: totalSum,
             monthly_payment_from: monthlyPayment,
         }
-        dispatch(calculatorActions.sendApplication(params))
+        await dispatch(calculatorActions.sendApplication(params))
+        alert('Ваша заявка отправлена')
     }
 
     return (
