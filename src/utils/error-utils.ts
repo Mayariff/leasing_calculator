@@ -1,4 +1,4 @@
-import {commonActions} from "../features/common_actions/app-actions";
+import {commonActions} from '../features/common_actions/app-actions';
 
 type ThunkAPIType = {
     dispatch: (action: any) => any

@@ -1,5 +1,5 @@
-import axios from "axios";
-import {paramsType, responseType} from "./type";
+import axios from 'axios';
+import {paramsType, responseType} from './type';
 
 const instance = axios.create({
     baseURL: 'https://hookb.in/',

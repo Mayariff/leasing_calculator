@@ -8,6 +8,9 @@
     @include flexStyle(column, space-between, flex-start, nowrap);
     padding-top: 44px;
   }
+  @media (max-width: 1119px) {
+    padding-top: 0;
+  }
 
   .fieldset {
     padding: 0;

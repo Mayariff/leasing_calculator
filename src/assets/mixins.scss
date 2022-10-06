@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 @mixin noneBaseStyle() {
   background: none;
@@ -36,17 +36,17 @@
   height: $height;
 }
 
-@mixin rangeTrack($color, $size, $marginTop){
+@mixin rangeTrack($color, $size, $marginTop) {
   border-radius: 50%;
-  @include  sizeBlock($size, $size);
+  @include sizeBlock($size, $size);
   background-color: $color;
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top:  $marginTop ;
+  margin-top: $marginTop;
   //box-shadow: -$size 0 0 1000px #43e5f7;
 }
 
-@mixin sliderThumb($color){
-  height:  1px;
+@mixin sliderThumb($color) {
+  height: 1px;
   background-color: $color;
 }

@@ -24,6 +24,7 @@
     }
 
     &:disabled {
+      background: $accentColor;
       opacity: 0.4;
     }
 

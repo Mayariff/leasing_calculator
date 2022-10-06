@@ -1,5 +1,6 @@
 {
   "name": "lizing",
+  "homepage": "https://Mayariff.github.io/leasing_calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -35,6 +36,7 @@
     "webpack-dev-server": "^4.11.0"
   },
   "scripts": {
+    "deploy": "gh-pages -d build",
     "start": "cross-env NODE_ENV=development webpack-dev-server --open",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "test": "react-scripts test",
@@ -42,7 +44,7 @@
     "predeploy": "npm run build",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
-    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
+    "statsA": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "eslintConfig": {
     "extends": [

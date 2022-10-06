@@ -1,11 +1,9 @@
-import {combineReducers} from "redux";
-import {appReducer} from "../features/Application";
+import {combineReducers} from 'redux';
+import {appReducer} from '../features/Application';
+import {calculatorReducer} from '../features/Сalculator';
 
 
 export const rootReducer = combineReducers({
     app: appReducer,
-    //eventsList: eventsListReducer,
-    //event: eventReducer,
-    //starters: startersReducer,
-    //eventForm: eventFormReducer
+    calculator: calculatorReducer
 })

@@ -1,5 +1,5 @@
-import {rootReducer} from "../App/rootReducer";
-import {store} from "../App/store";
+import {rootReducer} from '../App/rootReducer';
+import {store} from '../App/store';
 
 export type RootReducerType = typeof rootReducer
 

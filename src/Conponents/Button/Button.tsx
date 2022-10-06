@@ -1,21 +1,21 @@
-import React, {ButtonHTMLAttributes, DetailedHTMLProps, InputHTMLAttributes} from 'react';
+import React, {DetailedHTMLProps, InputHTMLAttributes} from 'react';
 import s from './Button.module.scss'
-import Spinner from "../Spinner/Spinner";
-
-type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
-type SuperButtonPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
-
-const Button: React.FC<SuperButtonPropsType> = ({className,  color, ...props}) => {
-    const isLoading = false
-    //const finalClassName = props.disabled ? `${s.default} ${s.disabled}` : (color === 'second' ? `${s.default} ${s.active} ${s.red}` : `${s.default} ${s.active}`)
+import Spinner from '../Spinner/Spinner';
+import {useAppSelector} from '../../utils/redux-utils';
+import {selectError, selectStatus} from '../../features/Application/selectors';
 
 
-    return (<div className={s.container} >
-            <input type={'submit'} className={`${s.button}`} {...props} />
-            {/*<button  className={`${s.button} ${s.loading}`} {...props} >
-                {btnName}
-            </button>*/}
-            {isLoading && <div className={s.spinner}><Spinner color={'#fff'}/></div>}
+type SuperButtonPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & {}
+
+const Button: React.FC<SuperButtonPropsType> = ({className, ...props}) => {
+    const appStatus = useAppSelector(selectStatus)
+    const appError = useAppSelector(selectError)
+
+    const btnStyle = appStatus === 'loading' ? `${s.button} ${s.loading}` : s.button
+
+    return (<div className={s.container}>
+            <input type={'submit'} className={btnStyle} {...props} disabled={appStatus === 'loading' || !!appError}/>
+            {appStatus === 'loading' && <div className={s.spinner}><Spinner color={'#fff'}/></div>}
         </div>
     );
 };
