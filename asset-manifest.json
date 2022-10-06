@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/leasing_calculator/static/css/main.7f7d5d5b.css",
-    "main.js": "/leasing_calculator/static/js/main.b1ac1a47.js",
+    "main.js": "/leasing_calculator/static/js/main.3206eb0c.js",
     "static/js/787.7e8f748e.chunk.js": "/leasing_calculator/static/js/787.7e8f748e.chunk.js",
     "static/media/Nekst-Bold.eot": "/leasing_calculator/static/media/Nekst-Bold.753a7c4c084c718c0281.eot",
     "static/media/Nekst-Bold.ttf": "/leasing_calculator/static/media/Nekst-Bold.cab6338caaec418b8de9.ttf",
@@ -113,11 +113,11 @@
     "static/media/Gilroy-Extrabold.woff2": "/leasing_calculator/static/media/Gilroy-Extrabold.5c5942d3e4d9a9645df4.woff2",
     "index.html": "/leasing_calculator/index.html",
     "main.7f7d5d5b.css.map": "/leasing_calculator/static/css/main.7f7d5d5b.css.map",
-    "main.b1ac1a47.js.map": "/leasing_calculator/static/js/main.b1ac1a47.js.map",
+    "main.3206eb0c.js.map": "/leasing_calculator/static/js/main.3206eb0c.js.map",
     "787.7e8f748e.chunk.js.map": "/leasing_calculator/static/js/787.7e8f748e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7f7d5d5b.css",
-    "static/js/main.b1ac1a47.js"
+    "static/js/main.3206eb0c.js"
   ]
 }
