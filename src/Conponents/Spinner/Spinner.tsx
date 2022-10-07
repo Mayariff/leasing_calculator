@@ -5,7 +5,7 @@ type propsType = {
     color?: string
 }
 
-const Spinner = ({color}: propsType) => {
+const Spinner = React.memo(({color}: propsType) => {
 
     const spinnerColor = {
         stroke: `${color}`
@@ -16,6 +16,6 @@ const Spinner = ({color}: propsType) => {
             <circle className={s.path} cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
         </svg>
     );
-};
+});
 
 export default Spinner;

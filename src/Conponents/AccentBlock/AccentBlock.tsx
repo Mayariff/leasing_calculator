@@ -8,7 +8,7 @@ type propsType = {
     currency?: '₽' | '$' | '€' | '%'
 }
 
-const AccentBlock = ({title, totalSum, currency}: propsType) => {
+const AccentBlock = React.memo(({title, totalSum, currency}: propsType) => {
 
     let sum = changeMoneyFormat(Math.round(totalSum))
 
@@ -19,6 +19,6 @@ const AccentBlock = ({title, totalSum, currency}: propsType) => {
             <div className={s.totalSum}>{sum} {currency && <span className={s.currency}>{currency}</span>}</div>
         </div>
     );
-};
+});
 
 export default AccentBlock;

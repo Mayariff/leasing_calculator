@@ -8,6 +8,7 @@ import {useAppDispatch} from '../../utils/redux-utils';
 import {AccentBlock, Button, SmartInput} from '../../Conponents';
 
 
+
 const Calculator = () => {
     const conditions = useContext(DataContex)
     const dispatch = useAppDispatch()
@@ -42,7 +43,7 @@ const Calculator = () => {
 
 
     //кнопка
-    const onclickHandler: MouseEventHandler<HTMLInputElement> = async (e) => {
+    const onclickHandler: MouseEventHandler<HTMLInputElement> = useCallback(async (e) => {
         e.preventDefault()
         const params: paramsType = {
             car_coast: carCoast,
@@ -54,7 +55,7 @@ const Calculator = () => {
         }
         await dispatch(calculatorActions.sendApplication(params))
         alert('Ваша заявка отправлена')
-    }
+    },[])
 
     return (
         <form className={s.form}>
